@@ -55,17 +55,31 @@ Describe Pizza.prototype.addPriceBasedOnSize()
 
 Test1: It should add a property called price to Pizza object.
 Code: 
+pizza.addSize(10);
 pizza.addPriceBasedOnSize(15);
 pizza;
-Expected Output: Pizza {quantity: 1, price = 0, size: 10, topping: ['pepperoni', 'jalapenos']}
+Expected Output: Pizza {quantity: 1, price = 15, size: 10, topping: ['pepperoni', 'jalapenos']}
 
 Test2: It should adjust price based on pizza size, 10 , 14, 18.
 Code:
 pizza.addSize(10);
 pizza.addPriceBasedOnSize();
 pizza;
-Expected Output: Pizza {quantity: 1, price = 0, size: 10, topping: ['pepperoni', 'jalapenos']}
+Expected Output: Pizza {quantity: 1, price = 10, size: 10, topping: ['pepperoni', 'jalapenos']}
 ```
+```
+Describe Pizza.prototype.addPriceBasedOnTopping()
+
+Test1: It should adjust price based on amount of pizza topping array length after size is declared. Each topping cost 2
+Code: 
+pizza.addSize(10);
+pizza.addPriceBasedOnSize();
+pizza.addTopping(["pepperoni", "jalapenos"]);
+pizza.addPriceBasedOnTopping();
+pizza;
+Expected Output: Pizza {quantity: 1, price = 14, size: 10, topping: ['pepperoni', 'jalapenos']}
+```
+
 ## Known bugs
 * _No known bugs_.
 
