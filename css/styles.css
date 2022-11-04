@@ -1,0 +1,44 @@
+* {
+  text-align: center;
+}
+.container {
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid;
+}
+/* hidden12 */
+
+/* pizza  */
+.pizza-size {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+fieldset#size {
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+  align-items: center;
+}
+#medium-pizza {
+  width: 80%;
+}
+fieldset#topping {
+  display: flex;
+  justify-content: center;
+}
+.topping-icon {
+  width: 33%;
+  margin: 0 -10rem;
+}
+.gray-img {
+  filter: grayscale(1);
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"]{
+  display: none;
+}
