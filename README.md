@@ -31,12 +31,22 @@ Test1: It should return a Pizza object with one property: quantity.
 Code: 
 const pizza = new Pizza();
 Expected Output: Pizza {quantity: 1}
-
+```
+```
 Describe Pizza.prototype.addSize()
+
 Test1: It should add a property called size to Pizza object.
 Code: 
 pizza.addSize("small");
 Expected Output: Pizza {quantity: 1, size: 'small'}
+```
+```
+Describe Pizza.prototype.addTopping()
+
+Test1: It should add a property called topping to Pizza object.
+Code: 
+pizza.addTopping(["pepperoni", "jalapenos"]);
+Expected Output: Pizza {quantity: 1, size: 'small', topping: ['pepperoni', 'jalapenos']}
 ```
 
 ## Known bugs
