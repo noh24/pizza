@@ -44,7 +44,9 @@ let pizza = new Pizza();
 function Customer() {
 }
 
-
+Customer.prototype.pickUpOrDelivery = function(userChoice) {
+  this.pickUpOrDelivery = userChoice;
+}
 
 let customer = new Customer();
 //make customer
