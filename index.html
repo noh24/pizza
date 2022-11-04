@@ -35,16 +35,71 @@
     </form>
   </div>
   <div id="hidden3">
-    <form id="pick-up-or-delivery">
-      <h2>Choose Your Fate:</h2>
-      <button id="pick-up" type="button">Pick Up</button>
-      <button id="delivery" type="button" >Delivery</button>
+    <h2>Choose Your Fate:</h2>
+    <button id="pick-up" type="button">Pick Up</button>
+    <button id="delivery" type="button" >Delivery</button>
+  </div>
+  <div id="hidden-address">
+    <h2>Where You Live?</h2>
+    <form id="address">
+      <div>
+        <label for="street-address">
+          Street Address:
+          <input id="street-address" type="text" placeholder="Street Address" required>
+        </label>
+      </div>
+      <div>
+        <label for="city">
+          City:
+          <input id="city" type="text" placeholder="City">
+        </label>
+      </div>
+      <div>
+        <label for="state">
+          State:
+          <input id="state" type="text" placeholder="State">
+        </label>
+      </div>
+      <div>
+        <label for="zip-code">
+          Zip Code:
+          <input id="zip-code" type="text" placeholder="Zip Code">
+        </label>
+      </div>
+      <button id="submit-address" type="submit">Submit</button>
+    </form>
+  </div>
+  <div id="hidden4">
+    <h2>Build Your Pizza!</h2>
+    <form id="pizza">
+      <fieldset>
+        <legend>What Size?</legend>
+        <label>
+          <div class="pizza-size">
+            <img src="./img/pizza-icon-64.png" alt="small pizza icon">
+            <input type="radio" id="small" value="10">
+          </div>
+          Small: 10in
+        </label>
+        <label>
+          <div class="pizza-size">
+            <img src="./img/pizza-icon-100.png" alt="medium pizza icon">
+            <input type="radio" id="medium" value="14">
+          </div>
+          Medium: 14in
+        </label>
+        <label>
+          <div class="pizza-size">
+            <img src="./img/pizza-icon-100.png" alt="medium pizza icon">
+            <input type="radio" id="large" value="18">
+          </div>
+          Large: 18in
+        </label>
+      </fieldset>
     </form>
   </div>
   <div>
 
   </div>
-  <div></div>
-  <div></div>
 </body>
 </html>
