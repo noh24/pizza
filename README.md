@@ -97,7 +97,15 @@ const customer = new Customer();
 customer;
 Expected Output: Customer {}
 ```
+```
+Describe Customer.prototype.pickUpOrDelivery()
 
+Test 1: It should add property pickUpOrDelivery with value of string "pick up"
+Code:
+customer.pickUpOrDelivery("pick up");
+customer;
+Expected Output: Customer {pickUpOrDelivery: "pick up"}
+```
 
 ## Known bugs
 * _No known bugs_.
