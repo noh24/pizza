@@ -48,8 +48,9 @@ Customer.prototype.pickUpOrDelivery = function(userChoice) {
   this.pickUpOrDelivery = userChoice;
 }
 
-Customer.prototype.nameOnOrder = function(userInputName) {
+Customer.prototype.nameAndCallBack = function(userInputName, userPhoneNumber) {
   this.nameOnOrder = userInputName;
+  this.phoneNumber = userPhoneNumber;
 }
 
 
