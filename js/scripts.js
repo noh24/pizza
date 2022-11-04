@@ -11,7 +11,7 @@ Pizza.prototype.addTopping = function(topping) {
   this.topping = topping;
 };
 
-Pizza.prototype.addPrice = function() {
+Pizza.prototype.addPriceBasedOnSize = function() {
   if (this.size === 10) {
     this.price = 10;
   } else if (this.size === 14) {

@@ -51,18 +51,18 @@ pizza;
 Expected Output: Pizza {quantity: 1, price = 0, size: 10, topping: ['pepperoni', 'jalapenos']}
 ```
 ```
-Describe Pizza.prototype.addPrice()
+Describe Pizza.prototype.addPriceBasedOnSize()
 
 Test1: It should add a property called price to Pizza object.
 Code: 
-pizza.addPrice(15);
+pizza.addPriceBasedOnSize(15);
 pizza;
 Expected Output: Pizza {quantity: 1, price = 0, size: 10, topping: ['pepperoni', 'jalapenos']}
 
 Test2: It should adjust price based on pizza size, 10 , 14, 18.
 Code:
 pizza.addSize(10);
-pizza.addPrice();
+pizza.addPriceBasedOnSize();
 pizza;
 Expected Output: Pizza {quantity: 1, price = 0, size: 10, topping: ['pepperoni', 'jalapenos']}
 ```
