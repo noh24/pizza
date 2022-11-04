@@ -41,3 +41,6 @@ const pizza = new Pizza();
   //add price
 
 // customer object
+function Customer() {
+  this.currentId = 0; 
+}
