@@ -25,6 +25,13 @@ Thanks for stopping by and enjoy the best New York-style pizza!
 
 ## Specifications/TDD
 ```
+Describe Pizza()
+
+Test1: It should return a Pizza object with three properties: size, topping, quantity.
+Code: 
+const pizza1 = new Pizza("small", ["pepperoni", "extra cheese"]);
+Expected Output: Pizza {size: 'small', topping: ['pepperoni', 'extra cheese'], quantity: 1}
+
 
 ```
 
