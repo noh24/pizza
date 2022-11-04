@@ -80,6 +80,10 @@ Order.prototype.addCustomer = function(customer) {
   this.customerInfo = customer; 
 };
 
+Order.prototype.assignOrderNumber = function() {
+  this.currentOrder++;
+  return this.currentOrder;
+};
 let order = new Order();
 //make order
   //add customer
