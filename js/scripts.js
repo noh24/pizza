@@ -48,6 +48,11 @@ Customer.prototype.pickUpOrDelivery = function(userChoice) {
   this.pickUpOrDelivery = userChoice;
 }
 
+Customer.prototype.nameOnOrder = function(userInputName) {
+  this.nameOnOrder = userInputName;
+}
+
+
 let customer = new Customer();
 //make customer
   //name on order
