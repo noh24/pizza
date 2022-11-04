@@ -11,9 +11,9 @@
 </head>
 <body>
   <div class="container">
-    <div id="hidden1" class="hidden">
+    <div id="hidden1">
       <h2>You want pizza?</h2>
-      <button id="start-button" type="button" class="btn btn-dark">Click Me If You Want Pizza</button>
+      <button id="start-button" type="button" class="btn btn-warning">Click Me If You Want Pizza</button>
     </div>
     <div id="hidden2" class="hidden">
       <form id="name-and-number">
@@ -31,13 +31,13 @@
             <small>Format: 123-123-1234</small>
           </label>
         </div>
-        <button id="submit-name-and-number" type="submit" class="btn btn-dark">Next</button>
+        <button id="submit-name-and-number" type="submit" class="btn btn-warning">Next</button>
       </form>
     </div>
     <div id="hidden3" class="hidden">
       <h2>Choose Your Fate:</h2>
-      <button id="pick-up" type="button" class="btn btn-dark">Pick Up</button>
-      <button id="delivery" type="button" class="btn btn-dark">Delivery</button>
+      <button id="pick-up" type="button" class="btn btn-warning">Pick Up</button>
+      <button id="delivery" type="button" class="btn btn-warning">Delivery</button>
     </div>
     <div id="hidden-address" class="hidden">
       <h2>Where You Live?</h2>
@@ -66,7 +66,7 @@
             <input class="form-control" id="zip-code" type="text" placeholder="Zip Code">
           </label>
         </div>
-        <button id="submit-address" type="submit" class="btn btn-dark">Submit</button>
+        <button id="submit-address" type="submit" class="btn btn-warning">Submit</button>
       </form>
     </div>
     <div id="hidden4" class="hidden">
@@ -115,10 +115,11 @@
             <input type="checkbox" name="topping" id="pineapple" value="pineapple">
           </label>
         </fieldset>
-        <button type="submit" class="btn btn-dark">Place Order</button>
+        <button type="submit" class="btn btn-warning">Place Order</button>
       </form>
     </div>
-    <div id="hidden5" class="hidde">
+    <div id="hidden5" class="hidden">
+      <h2>Customer Receipt</h2>
       <div id="customer-detail">
         <p>Name: <br><span class="name"></span></p>
         <p>Phone Number: <br><span class="phone-number"></span></p>
