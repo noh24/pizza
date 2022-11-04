@@ -125,6 +125,14 @@ customer;
 Expected Output: 
 Customer {address: {streetAddress: '1119 Rich People Street', city: 'Queens', state: 'NY', zipCode: 41233}}
 ```
+Describe Pizza.prototype.addPizza()
+
+Test1: It should add a property called customerPizza to Customer object.
+Code: 
+customer.addPizza(pizza);
+customer;
+Expected Output: Customer {customerPizza: Pizza{quantity: 1, price: 0}}
+```
 ```
 Describe Order()
 
@@ -155,6 +163,15 @@ Describe Order.prototype.assignOrderNumber()
 Test1: It should increment totalNumberOfOrders property by 1 and return it
 Code: 
 order.assignOrderNumber();
+order;
+Expected Output: Order {orderNumber: Customer {}, totalNumberOfOrders: 1}
+```
+```
+Describe Order.prototype.addPizza()
+
+Test1: It should increment totalNumberOfOrders property by 1 and return it
+Code: 
+order.addPizza(pizza);
 order;
 Expected Output: Order {orderNumber: Customer {}, totalNumberOfOrders: 1}
 ```
