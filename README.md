@@ -115,6 +115,16 @@ customer.nameAndCallBack("bobithy", "555 555 5555");
 customer;
 Expected Output: Customer {nameOnOrder: "bobithy", phoneNumber: "555 555 5555"}
 ```
+```
+Describe Customer.prototype.addDeliveryAddress()
+
+Test 1: It should add address object to Customer Object and add street address, city, state, zip code into address object
+Code:
+customer.addDeliveryAddress("1119 Rich People Street", "Queens", "NY", 41233);
+customer;
+Expected Output: 
+Customer {address: {streetAddress: '1119 Rich People Street', city: 'Queens', state: 'NY', zipCode: 41233}}
+```
 ## Known bugs
 * _No known bugs_.
 
