@@ -32,7 +32,7 @@ Pizza.prototype.addPriceBasedOnTopping = function() {
 };
 
 
-const pizza = new Pizza();
+let pizza = new Pizza();
 
 //make pizza
   //add toppings: pepperoni, pineapple, chicken, jalapenos
@@ -42,5 +42,16 @@ const pizza = new Pizza();
 
 // customer object
 function Customer() {
-  this.currentId = 0; 
 }
+
+
+
+let customer = new Customer();
+//make customer
+  //name on order
+  //call back phone number
+  //pick up or delivery
+  //if pick up
+    //come in 25 minutes
+  //if delivery
+    //address
