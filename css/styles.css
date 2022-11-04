@@ -1,15 +1,46 @@
 * {
   text-align: center;
+  font-family: 'Lucidia Monospace';
+  font-size: 20px;
+  color: rgb(197, 192, 185);
 }
-.container {
-  padding-right: 10%;
-  padding-left: 10%;
-  margin-right: auto;
-  margin-left: auto;
-  border: 2px solid;
+body {
+  background: url(../img/brick-oven.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
-/* hidden12 */
-
+#hidden1,
+#hidden2,
+#hidden3,
+#hidden4,
+#hidden-address,
+#hidden5 {
+  background-color: rgba(133, 74, 7, 0.582);
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  border-radius: 15px;
+}
+div.container {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn.btn-dark {
+  padding: 0.5rem;
+  margin-top: 3rem;
+  border-radius: 15px;
+}
+.hidden {
+  display: none;
+}
 /* pizza  */
 .pizza-size {
   display: flex;
