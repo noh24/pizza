@@ -107,13 +107,13 @@ customer;
 Expected Output: Customer {pickUpOrDelivery: "pick up"}
 ```
 ```
-Describe Customer.prototype.nameOnOrder()
+Describe Customer.prototype.nameAndCallBack()
 
-Test 1: It should add property nameOnOrder with value of string: user inputted name
+Test 1: It should add property nameOnOrder and phoneNumber with string values
 Code:
-customer.nameOnOrder("bobithy");
+customer.nameAndCallBack("bobithy", "555 555 5555");
 customer;
-Expected Output: Customer {nameOnOrder: "bobithy"}
+Expected Output: Customer {nameOnOrder: "bobithy", phoneNumber: "555 555 5555"}
 ```
 ## Known bugs
 * _No known bugs_.
