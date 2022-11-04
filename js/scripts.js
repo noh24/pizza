@@ -21,6 +21,15 @@ Pizza.prototype.addPriceBasedOnSize = function() {
   }
 };
 
+Pizza.prototype.addPriceBasedOnTopping = function() {
+  if (this.topping !== undefined) {
+    const totalPriceOfToppings = this.topping.length * 2;
+    this.price += totalPriceOfToppings;
+  }
+  console.log("No topping added");
+  return false
+};
+
 
 const pizza = new Pizza();
 
