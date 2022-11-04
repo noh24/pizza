@@ -29,7 +29,7 @@ Describe Pizza()
 
 Test1: It should return a Pizza object with two property: quantity and price.
 Code: 
-const pizza = new Pizza();
+let pizza = new Pizza();
 Expected Output: Pizza {quantity: 1, price = 0}
 ```
 ```
@@ -93,7 +93,7 @@ Describe Customer()
 
 Test1: It should create an Customer object;
 Code: 
-const customer = new Customer();
+let customer = new Customer();
 customer;
 Expected Output: Customer {}
 ```
@@ -124,6 +124,15 @@ customer.addDeliveryAddress("1119 Rich People Street", "Queens", "NY", 41233);
 customer;
 Expected Output: 
 Customer {address: {streetAddress: '1119 Rich People Street', city: 'Queens', state: 'NY', zipCode: 41233}}
+```
+```
+Describe Order()
+
+Test1: It should create an Order object with currentOrder property set to 0.
+Code: 
+let order = new Order();
+order;
+Expected Output: Order {currentOrder = 0}
 ```
 ## Known bugs
 * _No known bugs_.
