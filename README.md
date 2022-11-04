@@ -89,7 +89,13 @@ pizza;
 Expected Output: Pizza {quantity: 1, price = 10, size: 10, topping: undefined}
 ```
 ```
+Describe Customer()
 
+Test1: It should create an Customer object with property of currentId = 0;
+Code: 
+const customer = new Customer();
+customer;
+Expected Output: Customer {currentId: 0}
 ```
 
 ## Known bugs
