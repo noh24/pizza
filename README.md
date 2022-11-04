@@ -134,6 +134,15 @@ let order = new Order();
 order;
 Expected Output: Order {currentOrder = 0}
 ```
+```
+Describe Order.prototype.addCustomer()
+
+Test1: It should add customer object into order object
+Code: 
+order.addCustomer(customer);
+order;
+Expected Output: Order {currentOrder: 0, customerInfo: Customer {}}
+```
 ## Known bugs
 * _No known bugs_.
 
