@@ -71,3 +71,9 @@ let customer = new Customer();
     //come in 25 minutes
   //if delivery
     //address
+
+function Order() {
+  this.currentOrder = 0;
+}
+
+let order = new Order();
