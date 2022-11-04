@@ -106,7 +106,15 @@ customer.pickUpOrDelivery("pick up");
 customer;
 Expected Output: Customer {pickUpOrDelivery: "pick up"}
 ```
+```
+Describe Customer.prototype.nameOnOrder()
 
+Test 1: It should add property nameOnOrder with value of string: user inputted name
+Code:
+customer.nameOnOrder("bobithy");
+customer;
+Expected Output: Customer {nameOnOrder: "bobithy"}
+```
 ## Known bugs
 * _No known bugs_.
 
