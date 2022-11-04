@@ -73,16 +73,18 @@ let customer = new Customer();
     //address
 
 function Order() {
-  this.currentOrder = 0;
+  this.orderNumber = {};
+  this.totalNumberOfOrders = 0;
 }
 
 Order.prototype.addCustomer = function(customer) {
-  this.customerInfo = customer; 
+  this.totalNumberOfOrders = this.assignOrderNumber();
+  this.orderNumber[this.totalNumberOfOrders] = customer; 
 };
 
 Order.prototype.assignOrderNumber = function() {
-  this.currentOrder++;
-  return this.currentOrder;
+  this.totalNumberOfOrders++;
+  return this.totalNumberOfOrders;
 };
 let order = new Order();
 //make order
