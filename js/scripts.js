@@ -53,8 +53,16 @@ Customer.prototype.nameAndCallBack = function(userInputName, userPhoneNumber) {
   this.phoneNumber = userPhoneNumber;
 }
 
+Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zipCode) {
+  this.address = {};
+  this.address.streetAddress = streetAddress;
+  this.address.city = city;
+  this.address.state = state;
+  this.address.zipCode = zipCode;
+}
 
 let customer = new Customer();
+
 //make customer
   //name on order
   //call back phone number
