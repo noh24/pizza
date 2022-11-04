@@ -143,6 +143,15 @@ order.addCustomer(customer);
 order;
 Expected Output: Order {currentOrder: 0, customerInfo: Customer {}}
 ```
+```
+Describe Order.prototype.assignOrderNumber()
+
+Test1: It should increment currentOrder property by 1 and return it
+Code: 
+order.assignOrderNumber();
+order;
+Expected Output: Order {currentOrder: 1}
+```
 ## Known bugs
 * _No known bugs_.
 
