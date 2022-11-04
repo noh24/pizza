@@ -1,21 +1,30 @@
 function Pizza() {
   this.quantity = 1;
 }
-const pizza = new Pizza();
 
 Pizza.prototype.addSize = function(size) {
   this.size = size;
-}
+};
 
 Pizza.prototype.addTopping = function(topping) {
   this.topping = topping;
-}
+};
 
-Pizza.prototype.addPrice = function(price) {
-  this.price = price;
-}
+Pizza.prototype.addPrice = function() {
+  if (this.size === 10) {
+    this.price = 10;
+  } else if (this.size === 14) {
+    this.price = 14;
+  } else if (this.size === 18) {
+    this.price = 18;
+  }
+};
+
+const pizza = new Pizza();
+
 //make pizza
-  //add toppings
-  //choose size
+  //add toppings: pepperoni, pineapple, chicken, jalapenos
+  //choose size: 10, 14, 18
   //choose quantity
+  //add price
 
