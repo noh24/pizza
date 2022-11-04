@@ -7,6 +7,9 @@ Pizza.prototype.addSize = function(size) {
   this.size = size;
 }
 
+Pizza.prototype.addTopping = function(topping) {
+  this.topping = topping;
+}
 //make pizza
   //add toppings
   //choose size
