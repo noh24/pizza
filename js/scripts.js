@@ -46,12 +46,12 @@ function Customer() {
 
 Customer.prototype.pickUpOrDelivery = function(userChoice) {
   this.pickUpOrDelivery = userChoice;
-}
+};
 
 Customer.prototype.nameAndCallBack = function(userInputName, userPhoneNumber) {
   this.nameOnOrder = userInputName;
   this.phoneNumber = userPhoneNumber;
-}
+};
 
 Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zipCode) {
   this.address = {};
@@ -59,7 +59,7 @@ Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zip
   this.address.city = city;
   this.address.state = state;
   this.address.zipCode = zipCode;
-}
+};
 
 let customer = new Customer();
 
@@ -76,4 +76,11 @@ function Order() {
   this.currentOrder = 0;
 }
 
+Order.prototype.addCustomer = function(customer) {
+  this.customerInfo = customer; 
+};
+
 let order = new Order();
+//make order
+  //add customer
+  //add pizza
