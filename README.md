@@ -32,7 +32,11 @@ Code:
 const pizza = new Pizza();
 Expected Output: Pizza {quantity: 1}
 
-
+Describe Pizza.prototype.addSize()
+Test1: It should add a property called size to Pizza object.
+Code: 
+pizza.addSize("small");
+Expected Output: Pizza {quantity: 1, size: 'small'}
 ```
 
 ## Known bugs
