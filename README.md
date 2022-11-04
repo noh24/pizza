@@ -37,9 +37,9 @@ Describe Pizza.prototype.addSize()
 
 Test1: It should add a property called size to Pizza object.
 Code: 
-pizza.addSize("small");
+pizza.addSize(10);
 pizza;
-Expected Output: Pizza {quantity: 1, size: 'small'}
+Expected Output: Pizza {quantity: 1, size: 10}
 ```
 ```
 Describe Pizza.prototype.addTopping()
@@ -48,7 +48,7 @@ Test1: It should add a property called topping to Pizza object.
 Code: 
 pizza.addTopping(["pepperoni", "jalapenos"]);
 pizza;
-Expected Output: Pizza {quantity: 1, size: 'small', topping: ['pepperoni', 'jalapenos']}
+Expected Output: Pizza {quantity: 1, size: 10, topping: ['pepperoni', 'jalapenos']}
 ```
 ```
 Describe Pizza.prototype.addPrice()
@@ -57,7 +57,7 @@ Test1: It should add a property called price to Pizza object.
 Code: 
 pizza.addPrice(15);
 pizza;
-Expected Output: Pizza {quantity: 1, size: 'small', topping: ['pepperoni', 'jalapenos'], price: 15}
+Expected Output: Pizza {quantity: 1, size: 10, topping: ['pepperoni', 'jalapenos'], price: 15}
 ```
 ## Known bugs
 * _No known bugs_.
