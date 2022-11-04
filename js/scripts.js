@@ -1,3 +1,4 @@
+//pizza object
 function Pizza() {
   this.quantity = 1;
   this.price = 0;
@@ -39,3 +40,4 @@ const pizza = new Pizza();
   //choose quantity
   //add price
 
+// customer object
