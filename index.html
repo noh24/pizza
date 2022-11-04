@@ -12,25 +12,34 @@
   <div>
     <h1><span>N</span>ew <span>Y</span>ork <span>P</span>izza <span>O</span>nly</h1>
   </div>
-  <div>
+  <div id="hidden1">
     <h2>You want pizza?</h2>
-    <button type="button">Click Me If You Want Pizza</button>
+    <button id="start-button" type="button">Click Me If You Want Pizza</button>
   </div>
-  <div>
-    <label>
-      What Should I Call You? 
-      <input type="text" placeholder="Enter Your Name Here" required>
-    </label>
-    <label>
-      Can I Have Your Number?
-      <input type="tel" placeholder="Enter Your Phone Number Here" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-    </label>
-    <button type="button">Next</button>
+  <div id="hidden2">
+    <form id="name-and-number">
+      <div>
+        <label class="enter-your-name">
+          What Should I Call You? 
+          <input id="name" type="text" placeholder="Name Here" required>
+        </label>
+      </div>
+      <div>
+        <label class="enter-your-number">
+          Can I Have Your Number?
+          <input id="phone-number" type="tel" placeholder="123-123-1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+          <small>Format: 123-123-1234</small>
+        </label>
+      </div>
+      <button id="submit-name-and-number" type="submit">Next</button>
+    </form>
   </div>
-  <div>
-    <h2>Choose Your Fate:</h2>
-    <button type="button">Pick Up</button>
-    <button type="button">Delivery</button>
+  <div id="hidden3">
+    <form id="pick-up-or-delivery">
+      <h2>Choose Your Fate:</h2>
+      <button id="pick-up" type="button">Pick Up</button>
+      <button id="delivery" type="button" >Delivery</button>
+    </form>
   </div>
   <div>
 
