@@ -58,6 +58,13 @@ Code:
 pizza.addPrice(15);
 pizza;
 Expected Output: Pizza {quantity: 1, size: 10, topping: ['pepperoni', 'jalapenos'], price: 15}
+
+Test2: It should adjust price based on pizza size, 10 , 14, 18.
+Code:
+pizza.addSize(10);
+pizza.addPrice();
+pizza;
+Expected Output: Pizza {quantity: 1, size: 10, topping: ['pepperoni', 'jalapenos'], price: 10}
 ```
 ## Known bugs
 * _No known bugs_.
