@@ -61,6 +61,9 @@ Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zip
   this.address.zipCode = zipCode;
 };
 
+Customer.prototype.addPizza = function(pizza) {
+  this.customerPizza = pizza;
+}
 let customer = new Customer();
 
 //make customer
@@ -86,6 +89,8 @@ Order.prototype.assignOrderNumber = function() {
   this.totalNumberOfOrders++;
   return this.totalNumberOfOrders;
 };
+
+
 let order = new Order();
 //make order
   //add customer
