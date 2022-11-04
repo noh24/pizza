@@ -78,6 +78,18 @@ pizza.addTopping(["pepperoni", "jalapenos"]);
 pizza.addPriceBasedOnTopping();
 pizza;
 Expected Output: Pizza {quantity: 1, price = 14, size: 10, topping: ['pepperoni', 'jalapenos']}
+
+Test2: It should not adjust price if no topping is added.
+Code: 
+pizza.addSize(10);
+pizza.addPriceBasedOnSize();
+pizza.addTopping();
+pizza.addPriceBasedOnTopping();
+pizza;
+Expected Output: Pizza {quantity: 1, price = 10, size: 10, topping: undefined}
+```
+```
+
 ```
 
 ## Known bugs
