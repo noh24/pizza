@@ -3,6 +3,9 @@ function Pizza() {
 }
 const pizza = new Pizza();
 
+Pizza.prototype.addSize = function(size) {
+  this.size = size;
+}
 
 //make pizza
   //add toppings
