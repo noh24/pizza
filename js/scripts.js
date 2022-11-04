@@ -1,5 +1,6 @@
 function Pizza() {
   this.quantity = 1;
+  this.price = 0;
 }
 
 Pizza.prototype.addSize = function(size) {
@@ -19,6 +20,7 @@ Pizza.prototype.addPrice = function() {
     this.price = 18;
   }
 };
+
 
 const pizza = new Pizza();
 
