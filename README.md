@@ -48,17 +48,16 @@ Test1: It should add a property called topping to Pizza object.
 Code: 
 pizza.addTopping(["pepperoni", "jalapenos"]);
 pizza;
-Expected Output: Pizza {quantity: 0, price = 0, size: 10, topping: ['pepperoni', 'jalapenos']}
+Expected Output: Pizza {quantity: 0, price = 0, topping: ['pepperoni', 'jalapenos']}
 ```
 ```
 Describe Pizza.prototype.addPriceBasedOnSize()
 
 Test1: It should add a property called price to Pizza object.
 Code: 
-pizza.addSize(10);
 pizza.addPriceBasedOnSize(15);
 pizza;
-Expected Output: Pizza {quantity: 0, price = 15, size: 10, topping: ['pepperoni', 'jalapenos']}
+Expected Output: Pizza {quantity: 0, price = 15}
 
 Test2: It should adjust price based on pizza size, 10 , 14, 18.
 Code:
@@ -95,8 +94,21 @@ Test1: It should add to the quantity
 Code: 
 pizza.addQuantity(1);
 pizza;
-Expected Output: Pizza {quantity: 1, price = 0, size: 10, topping: ['pepperoni', 'jalapenos']}
+Expected Output: Pizza {quantity: 1, price = 0,}
 ```
+```
+Describe Pizza.prototype.addPriceBasedOnQuantity()
+
+Test1: It should adjust the price based on quantity
+Code: 
+pizza.addSize(10);
+pizza.addPriceBasedOnSize();
+pizza.addTopping(["pepperoni", "jalapenos"]);
+pizza.addPriceBasedOnTopping();
+pizza.addQuantity(2);
+pizza.addPriceBasedOnQuantity();
+pizza;
+Expected Output: Pizza {quantity: 2, price = 28, size: 10, topping: ['pepperoni', 'jalapenos']}
 ```
 Describe Customer()
 
