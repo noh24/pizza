@@ -161,7 +161,7 @@ function displayCheckout() {
     document.querySelector(".zip-code").innerText = customer.address.zipCode;
   }
   document.querySelector(".customer-pizza-size").innerText = pizza.size;
-  document.querySelector(".customer-pizza-topping").innerText = pizza.topping.length;
+  document.querySelector(".customer-pizza-topping").innerText = pizza.topping;
   document.querySelector(".customer-pizza-quantity").innerText = pizza.quantity;
   document.querySelector(".total-price").innerText = pizza.price;
 }
@@ -189,7 +189,11 @@ function highlightSelectedTopping(e) {
     }
   }
 
-
+document.getElementById("pay").addEventListener("click", showHidden6);
+function showHidden6() {
+  document.getElementById("hidden5").classList.add("hidden");
+  document.getElementById("hidden6").classList.remove("hidden");
+}
   // if (inputId !== "topping" && inputId !== undefined) {
   //   let targetElement = document.getElementById(inputId);
   //   if (targetElement.checked === true) {
