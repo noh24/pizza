@@ -34,6 +34,11 @@ Pizza.prototype.addQuantity = function(quantityToAdd) {
   this.quantity += quantityToAdd;
   return this.quantity;
 };
+
+Pizza.prototype.addPriceBasedOnQuantity = function() {
+  this.price *= this.quantity;
+  return this.price;
+};
 // customer object
 function Customer() {
 }
@@ -122,7 +127,8 @@ document.getElementById("address").addEventListener("submit", function(e) {
 // pizza menu
 document.getElementById("pizza").addEventListener("submit", function(e) {
   e.preventDefault();
-
+  let quantity = Number(document.getElementById("quantity").value);
+  pizza.addQuantity(quantity);
 });
 
 document.getElementById("size").addEventListener("click", highlightSelectedSize);
