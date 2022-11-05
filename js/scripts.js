@@ -77,12 +77,13 @@ let pizza = new Pizza();
 let order = new Order();
 let customer = new Customer();
 
-// document.querySelector("form#nameAndNumber").addEventListener("submit", function)
+// start button
 document.getElementById("start-button").addEventListener("click", function() {
   document.getElementById("hidden1").classList.add("hidden");
   document.getElementById("hidden2").classList.remove("hidden");
+  highlightSelectedSize();
 });
-
+// name and number
 document.getElementById("name-and-number").addEventListener("submit", function(e) {
   e.preventDefault();
   const name = document.getElementById("name").value;
@@ -91,13 +92,63 @@ document.getElementById("name-and-number").addEventListener("submit", function(e
   document.getElementById("hidden2").classList.add("hidden");
   document.getElementById("hidden3").classList.remove("hidden");
 });
-
+//pick up or delivery
 document.getElementById("pick-up").addEventListener("click", function() {
   document.getElementById("hidden3").classList.add("hidden");
   document.getElementById("hidden4").classList.remove("hidden");
   customer.pickUpOrDelivery(this.value);
 });
-
 document.getElementById("delivery").addEventListener("click", function() {
-
+  document.getElementById("hidden3").classList.add("hidden");
+  document.getElementById("hidden-address").classList.remove("hidden");
+  customer.pickUpOrDelivery(this.value);
 });
+//address submission
+document.getElementById("address").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const streetAddress = document.getElementById("street-address").value;
+  const city = document.getElementById("city").value;
+  const state = document.getElementById("state").value;
+  const zipCode = document.getElementById("zip-code").value;
+
+  customer.addDeliveryAddress(streetAddress, city, state, zipCode);
+  document.getElementById("hidden-address").classList.add("hidden");
+  document.getElementById("hidden4").classList.remove("hidden");
+});
+// pizza menu
+document.getElementById("pizza").addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+});
+
+document.getElementById("size").addEventListener("click", highlightSelectedSize);
+function highlightSelectedSize() {
+  const radioArray = Array.from(document.querySelectorAll("input[type=radio"));
+  radioArray.forEach(function(radio) {
+    if (radio.checked === true) {
+      radio.parentElement.classList.remove("gray-img");
+    } else {
+      radio.parentElement.classList.add("gray-img");
+    }
+  });
+}
+document.getElementById("topping").addEventListener("click", highlightSelectedTopping);
+function highlightSelectedTopping(e) {
+  let inputId = e.target.id;
+  let targetElement = document.getElementById(inputId);
+  if (inputId !== "") {
+    if (targetElement.checked === true) {
+      targetElement.previousElementSibling.classList.remove("gray-img");
+    } else {
+      targetElement.previousElementSibling.classList.add("gray-img");
+    }
+  }
+  // if (inputId !== "topping" && inputId !== undefined) {
+  //   let targetElement = document.getElementById(inputId);
+  //   if (targetElement.checked === true) {
+  //     targetElement.previousSibling.classList.remove("gray-img");
+  //   } else {
+  //     targetElement.previousSibling.classList.add("gray-img");
+  //   }
+  // }
+}
