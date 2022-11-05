@@ -27,18 +27,8 @@ Pizza.prototype.addPriceBasedOnTopping = function() {
     const totalPriceOfToppings = this.topping.length * 2;
     this.price += totalPriceOfToppings;
   }
-  console.log("No topping added");
-  return false
+  return
 };
-
-
-let pizza = new Pizza();
-
-//make pizza
-  //add toppings: pepperoni, pineapple, chicken, jalapenos
-  //choose size: 10, 14, 18
-  //choose quantity
-  //add price
 
 // customer object
 function Customer() {
@@ -64,17 +54,8 @@ Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zip
 Customer.prototype.addPizza = function(pizza) {
   this.customerPizza = pizza;
 }
-let customer = new Customer();
 
-//make customer
-  //name on order
-  //call back phone number
-  //pick up or delivery
-  //if pick up
-    //come in 25 minutes
-  //if delivery
-    //address
-
+//ORDER OBJECT
 function Order() {
   this.orderNumber = {};
   this.totalNumberOfOrders = 0;
@@ -91,7 +72,32 @@ Order.prototype.assignOrderNumber = function() {
 };
 
 
+//UI
+let pizza = new Pizza();
 let order = new Order();
-//make order
-  //add customer
-  //add pizza
+let customer = new Customer();
+
+// document.querySelector("form#nameAndNumber").addEventListener("submit", function)
+document.getElementById("start-button").addEventListener("click", function() {
+  document.getElementById("hidden1").classList.add("hidden");
+  document.getElementById("hidden2").classList.remove("hidden");
+});
+
+document.getElementById("name-and-number").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const phoneNumber = document.getElementById("phone-number").value;
+  customer.nameAndCallBack(name, phoneNumber);
+  document.getElementById("hidden2").classList.add("hidden");
+  document.getElementById("hidden3").classList.remove("hidden");
+});
+
+document.getElementById("pick-up").addEventListener("click", function() {
+  document.getElementById("hidden3").classList.add("hidden");
+  document.getElementById("hidden4").classList.remove("hidden");
+  customer.pickUpOrDelivery(this.value);
+});
+
+document.getElementById("delivery").addEventListener("click", function() {
+
+});
