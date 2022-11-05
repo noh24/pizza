@@ -127,11 +127,20 @@ document.getElementById("address").addEventListener("submit", function(e) {
 // pizza menu
 document.getElementById("pizza").addEventListener("submit", function(e) {
   e.preventDefault();
-  let quantity = Number(document.getElementById("quantity").value);
+  const quantity = Number(document.getElementById("quantity").value);
+  const size = Number(document.querySelector("input[name=pizza]:checked").value);
+  const inputToppingArray = Array.from(document.querySelectorAll("input[name=topping]:checked"));
+  const toppingArray = [];
+  inputToppingArray.forEach(function(topping) {
+    toppingArray.push(topping.value);
+  });
+
   pizza.addQuantity(quantity);
+  pizza.addSize(size);
+  pizza.addTopping(toppingArray);
 });
 
-document.getElementById("size").addEventListener("click", highlightSelectedSize);
+
 function highlightSelectedSize() {
   const radioArray = Array.from(document.querySelectorAll("input[type=radio"));
   radioArray.forEach(function(radio) {
@@ -142,9 +151,9 @@ function highlightSelectedSize() {
     }
   });
 }
-document.getElementById("topping").addEventListener("click", highlightSelectedTopping);
 function highlightSelectedTopping(e) {
   let inputId = e.target.id;
+  console.log("hi");
   let targetElement = document.getElementById(inputId);
   if (inputId !== "") {
     if (targetElement.checked === true) {
@@ -153,6 +162,9 @@ function highlightSelectedTopping(e) {
       targetElement.previousElementSibling.classList.add("gray-img");
     }
   }
+
+  document.getElementById("size").addEventListener("click", highlightSelectedSize);
+  document.getElementById("topping").addEventListener("click", highlightSelectedTopping);
   // if (inputId !== "topping" && inputId !== undefined) {
   //   let targetElement = document.getElementById(inputId);
   //   if (targetElement.checked === true) {
