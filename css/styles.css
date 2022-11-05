@@ -21,6 +21,7 @@ body {
   padding: 15%;
   border-radius: 15px;
 }
+
 div.container {
   position: absolute;
   margin: auto;
@@ -40,7 +41,8 @@ div.container {
 button#submit-address {
   margin-top: 1rem;
 }
-#pick-up {
+#pick-up,
+#delivery {
   margin-right: 1rem;
 }
 .hidden {
