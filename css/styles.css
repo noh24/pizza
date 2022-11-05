@@ -15,7 +15,7 @@ body {
 #hidden4,
 #hidden-address,
 #hidden5 {
-  background-color: rgba(133, 74, 7, 0.582);
+  background-color: rgba(66, 63, 62, 0.521);
   width: 85%;
   margin: 0 auto;
   padding: 15%;
@@ -32,15 +32,20 @@ div.container {
   flex-direction: column;
   justify-content: center;
 }
-.btn.btn-warning {
+.btn-warning {
   padding: 0.5rem;
   margin-top: 3rem;
   border-radius: 15px;
 }
+button#submit-address {
+  margin-top: 1rem;
+}
+#pick-up {
+  margin-right: 1rem;
+}
 .hidden {
   display: none;
 }
-/* pizza  */
 .pizza-size {
   display: flex;
   flex-direction: column;
