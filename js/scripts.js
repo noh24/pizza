@@ -134,7 +134,7 @@ document.getElementById("pizza").addEventListener("submit", function(e) {
   inputToppingArray.forEach(function(topping) {
     toppingArray.push(topping.value);
   });
-  
+
   pizza.addQuantity(quantity);
   pizza.addSize(size);
   pizza.addTopping(toppingArray);
@@ -143,8 +143,28 @@ document.getElementById("pizza").addEventListener("submit", function(e) {
   pizza.addPriceBasedOnQuantity();
   customer.addPizza(pizza);
   order.addCustomer(customer);
+
+  document.getElementById("hidden4").classList.add("hidden");
+  document.getElementById("hidden5").classList.remove("hidden");
+  displayCheckout()
 });
 
+function displayCheckout() {
+  document.querySelector(".name").innerText = customer.nameOnOrder;
+  document.querySelector(".phone-number").innerText = customer.phoneNumber;
+
+  if (customer.pickUpOrDelivery === "delivery") {
+    document.getElementById("hidden-delivery").classList.remove("hidden");
+    document.querySelector(".street-address").innerText = customer.address.streetAddress;
+    document.querySelector(".city").innerText = customer.address.city;
+    document.querySelector(".state").innerText = customer.address.state;
+    document.querySelector(".zip-code").innerText = customer.address.zipCode;
+  }
+  document.querySelector(".customer-pizza-size").innerText = pizza.size;
+  document.querySelector(".customer-pizza-topping").innerText = pizza.topping.length;
+  document.querySelector(".customer-pizza-quantity").innerText = pizza.quantity;
+  document.querySelector(".total-price").innerText = pizza.price;
+}
 
 document.getElementById("size").addEventListener("click", highlightSelectedSize);
 document.getElementById("topping").addEventListener("click", highlightSelectedTopping);
