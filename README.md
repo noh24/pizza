@@ -6,6 +6,7 @@ _Currently not deployed_: [Check out the project here](noh24.github.com/pizza/)
 ## Technologies Used  
 * HTML
 * CSS
+* Bootstrap
 * JavaScript
 * Web API
 
@@ -13,7 +14,7 @@ _Currently not deployed_: [Check out the project here](noh24.github.com/pizza/)
 Welcome to the New York Style Pizza Parlor!  
 The owner, yours truly, traveled the whole world trying pizza in all countries.  
 He was inspired to make his own pizza restaurant after trying New York-style pizza.  
-Customers select from a wide variety of specialty New York-style pizzas or customize their own!  
+Customers can select from a wide variety toppings to customize their very own NY-style pizza. 
 Thanks for stopping by and enjoy the best New York-style pizza!
 
 ## Setup/Installation Requirements
