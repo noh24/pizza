@@ -27,7 +27,7 @@ Pizza.prototype.addPriceBasedOnTopping = function() {
     const totalPriceOfToppings = this.topping.length * 2;
     this.price += totalPriceOfToppings;
   }
-  return
+  return;
 };
 
 Pizza.prototype.addQuantity = function(quantityToAdd) {
@@ -154,7 +154,7 @@ function handlePizzaSubmission(e) {
   pizza.addPriceBasedOnQuantity();
   customer.addPizza(pizza);
   order.addCustomer(customer);
-  displayCheckout()
+  displayCheckout();
 }
 
 function displayCheckout() {
