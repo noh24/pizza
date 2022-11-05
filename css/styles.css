@@ -70,6 +70,8 @@ fieldset#topping {
 }
 .gray-img {
   filter: grayscale(1);
+}
+img {
   cursor: pointer;
 }
 fieldset {
