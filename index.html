@@ -12,35 +12,34 @@
 <body>
   <div class="container">
     <div id="hidden1">
-      <h2>Would you like to build a pizza?</h2>
-      <button id="start-button" type="button" class="btn btn-warning">Click Me If You Want Pizza</button>
+      <h2>Welcome to New York Pizza</h2>
+      <button id="start-button" type="button" class="btn btn-warning">Let's Get Started</button>
     </div>
     <div id="hidden2" class="hidden">
       <form id="name-and-number">
-        <h2>Identify Yourself:</h2>
+        <h2>Basic Information</h2>
         <div class="form-group">
           <label class="enter-your-name">
-            What Should I Call You?<br>
-            <input class="form-control" id="name" type="text" placeholder="Name Here" required>
+            Name For Order<br>
+            <input class="form-control" id="name" type="text" placeholder="Name" required>
           </label>
         </div>
         <div class="form-group">
           <label class="enter-your-number">
-            Can I Have Your Number?<br>
+            Call Back Phone Number<br>
             <input class="form-control" id="phone-number" type="tel" placeholder="123-123-1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
-            <small>Format: 123-123-1234</small>
+            <small>Enter This Format: 123-123-1234</small>
           </label>
         </div>
         <button id="submit-name-and-number" type="submit" class="btn btn-warning">Next</button>
       </form>
     </div>
     <div id="hidden3" class="hidden">
-      <h2>Choose Your Fate:</h2>
       <button id="pick-up" type="button" class="btn btn-warning" value="pick-up">Pick Up</button>
       <button id="delivery" type="button" class="btn btn-warning" value="delivery">Delivery</button>
     </div>
     <div id="hidden-address" class="hidden">
-      <h2>Where Do You Live?</h2>
+      <h2>Address Delivery</h2>
       <form id="address">
         <div class="form-group">
           <label for="street-address">
@@ -70,7 +69,7 @@
       </form>
     </div>
     <div id="hidden4" class="hidden">
-      <h2>Build Your Pizza!</h2>
+      <h2>Let's Build Your Pizza!</h2>
       <form id="pizza">
         <label>
           Quantity
@@ -88,28 +87,28 @@
           </select>
         </label>
         <fieldset id="size">
-          <legend>What Size?</legend>
-          <label>
-            <div class="pizza-size gray-img">
+          <legend>Size</legend>
+          <div class="pizza-size gray-img">
+            <label>
               <img src="./img/pizza-icon-64.png" alt="small pizza icon">
-              <input type="radio" id="small" value="10" name="pizza" checked>
-            </div>
-            Small
-          </label>
-          <label>
-            <div class="pizza-size gray-img">
+              <input type="radio" id="small" value="10" name="pizza" checked> 
+              10 Inches
+            </label>
+          </div>
+          <div class="pizza-size gray-img">
+            <label>
               <img id="medium-pizza" src="./img/pizza-icon-100.png" alt="medium pizza icon">
               <input type="radio" id="medium" value="14" name="pizza">
-            </div>
-            Medium
-          </label>
-          <label>
-            <div class="pizza-size gray-img">
+              14 Inches
+            </label>
+          </div>
+          <div class="pizza-size gray-img">
+            <label>
               <img src="./img/pizza-icon-100.png" alt="large pizza icon">
               <input type="radio" id="large" value="18" name="pizza">
-            </div>
-            Large
-          </label>
+              18 Inches
+            </label> 
+          </div>
         </fieldset>
         <fieldset id="topping">
           <legend>Topping</legend>
@@ -135,9 +134,10 @@
     </div>
     <div id="hidden5" class="hidden">
       <h2>Cart</h2>
+      <hr>
       <div id="customer-detail">
-        <p>Name: <br><span class="name"></span></p>
-        <p>Phone Number: <br><span class="phone-number"></span></p>
+        <p>Name: <span class="name"></span></p>
+        <p>Phone Number: <span class="phone-number"></span></p>
         <div id="hidden-delivery" class="hidden">
           <hr>
           <p>Street Address: <br><span class="street-address"></span></p>

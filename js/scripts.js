@@ -180,9 +180,9 @@ function highlightSelectedSize() {
   const radioArray = Array.from(document.querySelectorAll("input[type=radio"));
   radioArray.forEach(function(radio) {
     if (radio.checked === true) {
-      radio.parentElement.classList.remove("gray-img");
+      radio.parentElement.parentElement.classList.remove("gray-img");
     } else {
-      radio.parentElement.classList.add("gray-img");
+      radio.parentElement.parentElement.classList.add("gray-img");
     }
   });
 }
