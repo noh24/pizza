@@ -72,6 +72,21 @@
     <div id="hidden4" class="hidden">
       <h2>Build Your Pizza!</h2>
       <form id="pizza">
+        <label>
+          Quantity
+          <select class="form-select" name="quantity" id="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </label>
         <fieldset id="size">
           <legend>What Size?</legend>
           <label>
@@ -119,7 +134,7 @@
       </form>
     </div>
     <div id="hidden5" class="hidden">
-      <h2>Customer Receipt</h2>
+      <h2>Cart</h2>
       <div id="customer-detail">
         <p>Name: <br><span class="name"></span></p>
         <p>Phone Number: <br><span class="phone-number"></span></p>
@@ -131,9 +146,15 @@
         </div>
       </div>
       <hr>
-      <div id="customer-order">Customer Order: <br><span class="customer-order"></span></div>
+      <div id="customer-order">Customer Order:
+        <br><span class="customer-pizza-size"></span>
+      </div>
       <hr>
       <div id="total-price">Total Price: <br><span class="total-price"></span></div>
+      <button type="click" class="btn btn-warning">Pay Me</button>
+    </div>
+    <div id="hidden6" class="hidden">
+      <h2>Thank you for your donation!</h2>
     </div>
   </div>
 </body>
