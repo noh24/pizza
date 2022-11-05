@@ -1,6 +1,6 @@
 //pizza object
 function Pizza() {
-  this.quantity = 1;
+  this.quantity = 0;
   this.price = 0;
 }
 
@@ -30,6 +30,10 @@ Pizza.prototype.addPriceBasedOnTopping = function() {
   return
 };
 
+Pizza.prototype.addQuantity = function(quantityToAdd) {
+  this.quantity += quantityToAdd;
+  return this.quantity;
+};
 // customer object
 function Customer() {
 }
@@ -118,7 +122,7 @@ document.getElementById("address").addEventListener("submit", function(e) {
 // pizza menu
 document.getElementById("pizza").addEventListener("submit", function(e) {
   e.preventDefault();
-  
+
 });
 
 document.getElementById("size").addEventListener("click", highlightSelectedSize);
