@@ -62,7 +62,7 @@ Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zip
 
 Customer.prototype.addPizza = function(pizza) {
   this.customerPizza = pizza;
-}
+};
 
 //ORDER OBJECT
 function Order() {
@@ -134,13 +134,20 @@ document.getElementById("pizza").addEventListener("submit", function(e) {
   inputToppingArray.forEach(function(topping) {
     toppingArray.push(topping.value);
   });
-
+  
   pizza.addQuantity(quantity);
   pizza.addSize(size);
   pizza.addTopping(toppingArray);
+  pizza.addPriceBasedOnSize();
+  pizza.addPriceBasedOnTopping();
+  pizza.addPriceBasedOnQuantity();
+  customer.addPizza(pizza);
+  order.addCustomer(customer);
 });
 
 
+document.getElementById("size").addEventListener("click", highlightSelectedSize);
+document.getElementById("topping").addEventListener("click", highlightSelectedTopping);
 function highlightSelectedSize() {
   const radioArray = Array.from(document.querySelectorAll("input[type=radio"));
   radioArray.forEach(function(radio) {
@@ -153,7 +160,6 @@ function highlightSelectedSize() {
 }
 function highlightSelectedTopping(e) {
   let inputId = e.target.id;
-  console.log("hi");
   let targetElement = document.getElementById(inputId);
   if (inputId !== "") {
     if (targetElement.checked === true) {
@@ -163,8 +169,7 @@ function highlightSelectedTopping(e) {
     }
   }
 
-  document.getElementById("size").addEventListener("click", highlightSelectedSize);
-  document.getElementById("topping").addEventListener("click", highlightSelectedTopping);
+
   // if (inputId !== "topping" && inputId !== undefined) {
   //   let targetElement = document.getElementById(inputId);
   //   if (targetElement.checked === true) {
