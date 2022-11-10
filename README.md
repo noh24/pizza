@@ -28,80 +28,68 @@ Describe Pizza()
 
 Test1: When called with arguments, should return Pizza object with 4 properties.
 Code: 
-let pizza = new Pizza(10, "jalapenos");
+let pizza = new Pizza(1, 10, "jalapenos");
 pizza;
-Expected Output: Pizza { quantity: 0, price: 0, size: 10, topping: "jalapenos" }
+Expected Output: Pizza { quantity: 1, price: 0, size: 10, topping: "jalapenos" }
 ```
 ```
 Describe Pizza.prototype.addPriceBasedOnSize()
 
 Test1: It should adjust price based on size 10
 Code: 
-let pizza = new Pizza(10);
+let pizza = new Pizza(1, 10);
 pizza.addPriceBasedOnSize();
 pizza;
-Expected Output: Pizza { quantity: 0, price: 10, size: 10, topping: undefined }
+Expected Output: Pizza { quantity: 1, price: 10, size: 10, topping: undefined }
 
 Test2: It should adjust price based on size 14
 Code: 
-let pizza = new Pizza(14);
+let pizza = new Pizza(1, 14);
 pizza.addPriceBasedOnSize();
 pizza;
-Expected Output: Pizza { quantity: 0, price: 14, size: 14, topping: undefined }
+Expected Output: Pizza { quantity: 1, price: 14, size: 14, topping: undefined }
 
 Test3: It should adjust price based on size 18
 Code: 
-let pizza = new Pizza(18);
+let pizza = new Pizza(1, 18);
 pizza.addPriceBasedOnSize();
 pizza;
-Expected Output: Pizza { quantity: 0, price: 18, size: 18, topping: undefined }
+Expected Output: Pizza { quantity: 1, price: 18, size: 18, topping: undefined }
 ```
 ```
 Describe Pizza.prototype.addPriceBasedOnTopping()
 
 Test1: It should adjust price based on number of toppings: 1, each topping is 2
 Code: 
-let pizza = new Pizza(0, ["jalapenos"]);
+let pizza = new Pizza(1, 0, ["jalapenos"]);
 pizza.addPriceBasedOnTopping();
 pizza;
-Expected Output: Pizza { quantity: 0, price = 2, size: 0, topping: ["jalapenos"] }
+Expected Output: Pizza { quantity: 1, price = 2, size: 0, topping: ["jalapenos"] }
 
 Test2: It should adjust price based on number of toppings: 2, each topping is 2
 Code: 
-let pizza = new Pizza(0, ["jalapenos", "pepperoni"]);
+let pizza = new Pizza(1, 0, ["jalapenos", "pepperoni"]);
 pizza.addPriceBasedOnTopping();
 pizza;
-Expected Output: Pizza { quantity: 0, price = 2, size: 0, topping: ["jalapenos"] }
+Expected Output: Pizza { quantity: 1, price = 2, size: 0, topping: ["jalapenos", "pepperoni"] }
 
 Test3: It should not adjust price if no topping is added.
 Code: 
-let pizza = new Pizza(0);
+let pizza = new Pizza(1, 0);
 pizza.addPriceBasedOnTopping();
 pizza;
 Expected Output: Pizza { quantity: 0, price = 0, size: 0, topping: undefined }
 ```
 ```
-Describe Pizza.prototype.addQuantity(quantityToAdd)
-
-Test1: It should add to the quantity
-Code: 
-pizza.addQuantity(1);
-pizza;
-Expected Output: Pizza {quantity: 1, price = 0,}
-```
-```
 Describe Pizza.prototype.addPriceBasedOnQuantity()
 
-Test1: It should adjust the price based on quantity
+Test1: Should adjust price based on the quantity of pizza
 Code: 
-pizza.addSize(10);
-pizza.addPriceBasedOnSize();
-pizza.addTopping(["pepperoni", "jalapenos"]);
-pizza.addPriceBasedOnTopping();
-pizza.addQuantity(2);
+let pizza = new Pizza(3);
+pizza.price = 10;
 pizza.addPriceBasedOnQuantity();
 pizza;
-Expected Output: Pizza {quantity: 2, price = 28, size: 10, topping: ['pepperoni', 'jalapenos']}
+Expected Output: Pizza { quantity: 3, price = 30, size: undefined, topping: undefined }
 ```
 ```
 Describe Customer()
