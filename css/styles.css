@@ -13,10 +13,9 @@ body {
 #hidden1,
 #hidden2,
 #hidden3,
-#hidden4,
 #hidden-address,
-#hidden5,
-#hidden6 {
+#hidden4,
+#hidden5 {
   background-color: rgba(66, 63, 62, 0.521);
   width: 85%;
   margin: auto auto;
@@ -42,10 +41,6 @@ div.container {
 }
 button#submit-address {
   margin-top: 1rem;
-}
-#pick-up,
-#delivery {
-  margin-right: 1rem;
 }
 .hidden {
   display: none;
@@ -87,8 +82,8 @@ img {
 fieldset {
   margin-top: 1rem;
 }
-input[type="checkbox"],
-input[type="radio"]{
+input[name="topping"],
+input[name="pizza-size"]{
   display: none;
 }
 .form-select,
