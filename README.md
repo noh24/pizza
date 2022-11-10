@@ -31,23 +31,30 @@ Code:
 let pizza = new Pizza(10, "jalapenos");
 pizza;
 Expected Output: Pizza { quantity: 0, price: 0, size: 10, topping: "jalapenos" }
-
 ```
 ```
 Describe Pizza.prototype.addPriceBasedOnSize()
 
-Test1: It should add to price of Pizza object.
+Test1: It should adjust price based on size 10
 Code: 
-pizza.addPriceBasedOnSize(15);
-pizza;
-Expected Output: Pizza {quantity: 0, price = 15}
-
-Test2: It should adjust price based on pizza size, 10 , 14, 18.
-Code:
-pizza.addSize(10);
+let pizza = new Pizza(10);
 pizza.addPriceBasedOnSize();
 pizza;
-Expected Output: Pizza {quantity: 0, price = 10, size: 10}
+Expected Output: Pizza { quantity: 0, price: 10, size: 10, topping: undefined }
+
+Test2: It should adjust price based on size 14
+Code: 
+let pizza = new Pizza(14);
+pizza.addPriceBasedOnSize();
+pizza;
+Expected Output: Pizza { quantity: 0, price: 14, size: 14, topping: undefined }
+
+Test3: It should adjust price based on size 18
+Code: 
+let pizza = new Pizza(18);
+pizza.addPriceBasedOnSize();
+pizza;
+Expected Output: Pizza { quantity: 0, price: 18, size: 18, topping: undefined }
 ```
 ```
 Describe Pizza.prototype.addPriceBasedOnTopping()
