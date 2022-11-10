@@ -28,20 +28,14 @@ Pizza.prototype.addPriceBasedOnQuantity = function() {
   return this.price;
 };
 // customer object
-function Customer() {
-}
-
-Customer.prototype.pickUpOrDelivery = function(userChoice) {
-  this.pickUpOrDelivery = userChoice;
-};
-
-Customer.prototype.nameAndCallBack = function(userInputName, userPhoneNumber) {
+function Customer(userInputName, userPhoneNumber, userChoice) {
   this.nameOnOrder = userInputName;
   this.phoneNumber = userPhoneNumber;
-};
+  this.pickUpOrDelivery = userChoice;
+  this.address = {};
+}
 
 Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zipCode) {
-  this.address = {};
   this.address.streetAddress = streetAddress;
   this.address.city = city;
   this.address.state = state;
