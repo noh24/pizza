@@ -59,23 +59,26 @@ Expected Output: Pizza { quantity: 0, price: 18, size: 18, topping: undefined }
 ```
 Describe Pizza.prototype.addPriceBasedOnTopping()
 
-Test1: It should adjust price based on topping number. Each topping cost 2
+Test1: It should adjust price based on number of toppings: 1, each topping is 2
 Code: 
-pizza.addSize(10);
-pizza.addPriceBasedOnSize();
-pizza.addTopping(["pepperoni", "jalapenos"]);
+let pizza = new Pizza(0, ["jalapenos"]);
 pizza.addPriceBasedOnTopping();
 pizza;
-Expected Output: Pizza {quantity: 0, price = 14, size: 10, topping: ['pepperoni', 'jalapenos']}
+Expected Output: Pizza { quantity: 0, price = 2, size: 0, topping: ["jalapenos"] }
 
-Test2: It should not adjust price if no topping is added.
+Test2: It should adjust price based on number of toppings: 2, each topping is 2
 Code: 
-pizza.addSize(10);
-pizza.addPriceBasedOnSize();
-pizza.addTopping();
+let pizza = new Pizza(0, ["jalapenos", "pepperoni"]);
 pizza.addPriceBasedOnTopping();
 pizza;
-Expected Output: Pizza {quantity: 0, price = 10, size: 10, topping: undefined}
+Expected Output: Pizza { quantity: 0, price = 2, size: 0, topping: ["jalapenos"] }
+
+Test3: It should not adjust price if no topping is added.
+Code: 
+let pizza = new Pizza(0);
+pizza.addPriceBasedOnTopping();
+pizza;
+Expected Output: Pizza { quantity: 0, price = 0, size: 0, topping: undefined }
 ```
 ```
 Describe Pizza.prototype.addQuantity(quantityToAdd)
