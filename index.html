@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="./css/styles.css">
-  <script src="./js/scripts.js" defer></script>
+  <script src="./js/scripts.js"></script>
   <title>New York Pizza</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
       <button id="start-button" type="button" class="btn btn-warning">Let's Get Started</button>
     </div>
     <div id="hidden2" class="hidden">
-      <form id="name-and-number">
+      <form id="basic-info">
         <h2>Basic Information</h2>
         <div class="form-group">
           <label class="enter-your-name">
@@ -31,12 +31,14 @@
             <small>Enter This Format: 123-123-1234</small>
           </label>
         </div>
-        <button id="submit-name-and-number" type="submit" class="btn btn-warning">Next</button>
+        <div class="form-group pick-up">
+          <input type="radio" name="methodToGetPizza" id="pick-up" value="pick-up" checked>
+          <label for="pick-up">Pick Up</label>
+          <input type="radio" name="methodToGetPizza" id="delivery" value="delivery">
+          <label for="delivery">Delivery</label>
+        </div>
+        <button id="submit-basic-info" type="submit" class="btn btn-warning">Submit</button>
       </form>
-    </div>
-    <div id="hidden3" class="hidden">
-      <button id="pick-up" type="button" class="btn btn-warning" value="pick-up">Pick Up</button>
-      <button id="delivery" type="button" class="btn btn-warning" value="delivery">Delivery</button>
     </div>
     <div id="hidden-address" class="hidden">
       <h2>Address Delivery</h2>
@@ -68,7 +70,7 @@
         <button id="submit-address" type="submit" class="btn btn-warning">Submit</button>
       </form>
     </div>
-    <div id="hidden4" class="hidden">
+    <div id="hidden3" class="hidden">
       <h2>Let's Build Your Pizza!</h2>
       <form id="pizza">
         <label>
@@ -91,21 +93,21 @@
           <div class="pizza-size gray-img">
             <label>
               <img src="./img/pizza-icon-64.png" alt="small pizza icon">
-              <input type="radio" id="small" value="10" name="pizza" checked> 
+              <input type="radio" id="small" value="10" name="pizza-size" checked> 
               10 Inches
             </label>
           </div>
           <div class="pizza-size gray-img">
             <label>
               <img id="medium-pizza" src="./img/pizza-icon-100.png" alt="medium pizza icon">
-              <input type="radio" id="medium" value="14" name="pizza">
+              <input type="radio" id="medium" value="14" name="pizza-size">
               14 Inches
             </label>
           </div>
           <div class="pizza-size gray-img">
             <label>
               <img src="./img/pizza-icon-100.png" alt="large pizza icon">
-              <input type="radio" id="large" value="18" name="pizza">
+              <input type="radio" id="large" value="18" name="pizza-size">
               18 Inches
             </label> 
           </div>
@@ -132,7 +134,7 @@
         <button type="submit" class="btn btn-warning">Place Order</button>
       </form>
     </div>
-    <div id="hidden5" class="hidden">
+    <div id="hidden4" class="hidden">
       <h2>Cart</h2>
       <hr>
       <div id="customer-detail">
@@ -156,7 +158,7 @@
       <p>Price: $<span class="total-price"></span></p> 
       <button id="pay" type="click" class="btn btn-warning">Checkout</button>
     </div>
-    <div id="hidden6" class="hidden">
+    <div id="hidden5" class="hidden">
       <h2>Thank you for your donation!</h2>
     </div>
   </div>
