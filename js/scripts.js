@@ -42,27 +42,6 @@ Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zip
   this.address.zipCode = zipCode;
 };
 
-Customer.prototype.addPizza = function(pizza) {
-  this.customerPizza = pizza;
-};
-
-//ORDER OBJECT
-function Order() {
-  this.orderNumber = {};
-  this.totalNumberOfOrders = 0;
-}
-
-Order.prototype.addCustomer = function(customer) {
-  this.totalNumberOfOrders = this.assignOrderNumber();
-  this.orderNumber[this.totalNumberOfOrders] = customer; 
-};
-
-Order.prototype.assignOrderNumber = function() {
-  this.totalNumberOfOrders++;
-  return this.totalNumberOfOrders;
-};
-
-
 //UI
 let pizza = new Pizza();
 let order = new Order();
