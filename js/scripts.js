@@ -110,7 +110,6 @@ function addAddressToDisplay(customer) {
 }
 
 function handlePizzaSubmission(customer) {
-  
   document.getElementById("hidden-address").classList.add("hidden");
   const quantity = Number(document.getElementById("quantity").value);
   const size = Number(document.querySelector("input[name=pizza-size]:checked").value);
