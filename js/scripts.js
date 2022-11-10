@@ -5,14 +5,6 @@ function Pizza(size, topping) {
   this.topping = topping;
 }
 
-Pizza.prototype.addSize = function(size) {
-  this.size = size;
-};
-
-Pizza.prototype.addTopping = function(topping) {
-  this.topping = topping;
-};
-
 Pizza.prototype.addPriceBasedOnSize = function() {
   if (this.size === 10) {
     this.price = 10;
