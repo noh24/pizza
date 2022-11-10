@@ -43,20 +43,26 @@ Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zip
 };
 
 //UI
-let pizza = new Pizza();
-let order = new Order();
-let customer = new Customer();
-
-
-document.getElementById("start-button").addEventListener("click", handleClickStart);
-document.getElementById("name-and-number").addEventListener("submit", handleNameAndNumberSubmission);
-document.getElementById("pick-up").addEventListener("click", handleClickPickUp);
-document.getElementById("delivery").addEventListener("click", handleClickDelivery);
-document.getElementById("address").addEventListener("submit", handleAddressSubmission);
-document.getElementById("pizza").addEventListener("submit", handlePizzaSubmission);
-document.getElementById("size").addEventListener("click", highlightSelectedSize);
-document.getElementById("topping").addEventListener("click", highlightSelectedTopping);
-document.getElementById("pay").addEventListener("click", showHidden6);
+window.addEventListener('load', function() {
+  document.getElementById("start-button").addEventListener("click", handleClickStart);
+  document.getElementById("basic-info").addEventListener("submit", function(e) {
+    e.preventDefault();
+    handleBasicInfoSubmission();
+  });
+  document.getElementById("address").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let customer = handleBasicInfoSubmission();
+    handleAddressSubmission(customer);
+  });
+  document.getElementById("pizza").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let customer = handleBasicInfoSubmission();
+    handlePizzaSubmission(customer);
+  });
+  document.getElementById("size").addEventListener("click", highlightSelectedSize);
+  document.getElementById("topping").addEventListener("click", highlightSelectedTopping);
+  document.getElementById("pay").addEventListener("click", showThankYou);
+});
 
 function handleClickStart() {
   document.getElementById("hidden1").classList.add("hidden");
@@ -64,82 +70,81 @@ function handleClickStart() {
   highlightSelectedSize();
 }
 
-function handleNameAndNumberSubmission(e) {
-  e.preventDefault();
+function handleBasicInfoSubmission() {
   const name = document.getElementById("name").value;
   const phoneNumber = document.getElementById("phone-number").value;
-  customer.nameAndCallBack(name, phoneNumber);
+  const pickUpOrDelivery = document.querySelector('input[name=methodToGetPizza]:checked').value;
+  let customer = new Customer(name, phoneNumber, pickUpOrDelivery);
   document.getElementById("hidden2").classList.add("hidden");
-  document.getElementById("hidden3").classList.remove("hidden");
+  if (pickUpOrDelivery === 'delivery') {
+    document.getElementById("hidden-address").classList.remove("hidden");
+  } else {
+    document.getElementById("hidden3").classList.remove("hidden");
+  }
+  addBasicInfoToDisplay(customer);
+  return customer;
 }
 
-function handleClickPickUp() {
-  document.getElementById("hidden3").classList.add("hidden");
-  document.getElementById("hidden4").classList.remove("hidden");
-  customer.pickUpOrDelivery(this.value);
+function addBasicInfoToDisplay(customer) {
+  document.querySelector(".name").innerText = customer.nameOnOrder;
+  document.querySelector(".phone-number").innerText = customer.phoneNumber;
 }
 
-function handleClickDelivery() {
-  document.getElementById("hidden3").classList.add("hidden");
-  document.getElementById("hidden-address").classList.remove("hidden");
-  customer.pickUpOrDelivery(this.value);
-}
-
-function handleAddressSubmission(e) {
-  e.preventDefault();
+function handleAddressSubmission(customer) {
   const streetAddress = document.getElementById("street-address").value;
   const city = document.getElementById("city").value;
   const state = document.getElementById("state").value;
   const zipCode = document.getElementById("zip-code").value;
-
   customer.addDeliveryAddress(streetAddress, city, state, zipCode);
   document.getElementById("hidden-address").classList.add("hidden");
-  document.getElementById("hidden4").classList.remove("hidden");
+  document.getElementById("hidden3").classList.remove("hidden");
+  addAddressToDisplay(customer);
+  return customer;
 }
 
-function handlePizzaSubmission(e) {
-  e.preventDefault();
+function addAddressToDisplay(customer) {
+  document.querySelector(".street-address").innerText = customer.address.streetAddress;
+  document.querySelector(".city").innerText = customer.address.city;
+  document.querySelector(".state").innerText = customer.address.state;
+  document.querySelector(".zip-code").innerText = customer.address.zipCode;
+}
+
+function handlePizzaSubmission(customer) {
+  
+  document.getElementById("hidden-address").classList.add("hidden");
   const quantity = Number(document.getElementById("quantity").value);
-  const size = Number(document.querySelector("input[name=pizza]:checked").value);
+  const size = Number(document.querySelector("input[name=pizza-size]:checked").value);
   const inputToppingArray = Array.from(document.querySelectorAll("input[name=topping]:checked"));
   const toppingArray = [];
   inputToppingArray.forEach(function(topping) {
     toppingArray.push(topping.value);
   });
-
-  pizza.addQuantity(quantity);
-  pizza.addSize(size);
-  pizza.addTopping(toppingArray);
+  let pizza = new Pizza(quantity, size, toppingArray);
   pizza.addPriceBasedOnSize();
   pizza.addPriceBasedOnTopping();
   pizza.addPriceBasedOnQuantity();
-  customer.addPizza(pizza);
-  order.addCustomer(customer);
-  displayCheckout();
+  addPizzaDetailsToDisplay(pizza);
+  displayCheckout(customer);
 }
 
-function displayCheckout() {
-  document.getElementById("hidden4").classList.add("hidden");
-  document.getElementById("hidden5").classList.remove("hidden");
-  document.querySelector(".name").innerText = customer.nameOnOrder;
-  document.querySelector(".phone-number").innerText = customer.phoneNumber;
-
-  if (customer.pickUpOrDelivery === "delivery") {
-    document.getElementById("hidden-delivery").classList.remove("hidden");
-    document.querySelector(".street-address").innerText = customer.address.streetAddress;
-    document.querySelector(".city").innerText = customer.address.city;
-    document.querySelector(".state").innerText = customer.address.state;
-    document.querySelector(".zip-code").innerText = customer.address.zipCode;
-  }
+function addPizzaDetailsToDisplay(pizza) {
   document.querySelector(".customer-pizza-size").innerText = pizza.size;
   document.querySelector(".customer-pizza-topping").innerText = pizza.topping.length;
   document.querySelector(".customer-pizza-quantity").innerText = pizza.quantity;
   document.querySelector(".total-price").innerText = pizza.price;
 }
 
+function displayCheckout(customer) {
+  document.getElementById("hidden3").setAttribute('class', "hidden");
+  document.getElementById("hidden4").classList.remove("hidden");
+  if (customer.pickUpOrDelivery === "delivery") {
+    document.getElementById("hidden-delivery").classList.remove("hidden");
+  }
+}
+
 function highlightSelectedSize() {
-  const radioArray = Array.from(document.querySelectorAll("input[type=radio"));
-  radioArray.forEach(function(radio) {
+  const pizzaSizeRadioArray = Array.from(document.querySelectorAll("input[name=pizza-size"));
+  pizzaSizeRadioArray.forEach(function(radio) {
     if (radio.checked === true) {
       radio.parentElement.parentElement.classList.remove("gray-img");
     } else {
@@ -160,7 +165,7 @@ function highlightSelectedTopping(e) {
   }
 }
 
-function showHidden6() {
-  document.getElementById("hidden5").classList.add("hidden");
-  document.getElementById("hidden6").classList.remove("hidden");
+function showThankYou() {
+  document.getElementById("hidden4").classList.add("hidden");
+  document.getElementById("hidden5").classList.remove("hidden");
 }
