@@ -26,28 +26,12 @@ Thanks for stopping by and enjoy the best New York-style pizza!
 ```
 Describe Pizza()
 
-Test1: It should return a Pizza object with two property: quantity and price.
+Test1: When called with arguments, should return Pizza object with 4 properties.
 Code: 
-let pizza = new Pizza();
-Expected Output: Pizza {quantity: 0, price = 0}
-```
-```
-Describe Pizza.prototype.addSize()
-
-Test1: It should add a property called size to Pizza object.
-Code: 
-pizza.addSize(10);
+let pizza = new Pizza(10, "jalapenos");
 pizza;
-Expected Output: Pizza {quantity: 0, price = 0, size: 10}
-```
-```
-Describe Pizza.prototype.addTopping()
+Expected Output: Pizza { quantity: 0, price: 0, size: 10, topping: "jalapenos" }
 
-Test1: It should add a property called topping with an array as a value.
-Code: 
-pizza.addTopping(["pepperoni", "jalapenos"]);
-pizza;
-Expected Output: Pizza {quantity: 0, price = 0, topping: ['pepperoni', 'jalapenos']}
 ```
 ```
 Describe Pizza.prototype.addPriceBasedOnSize()
