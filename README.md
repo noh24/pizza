@@ -94,48 +94,22 @@ Expected Output: Pizza { quantity: 3, price = 30, size: undefined, topping: unde
 ```
 Describe Customer()
 
-Test1: It should create a Customer object;
+Test1: should create Customer object with 4 properties
 Code: 
-let customer = new Customer();
+let customer = new Customer("bobithy", "555-555-5555", "pick up" );
 customer;
-Expected Output: Customer {}
-```
-```
-Describe Customer.prototype.pickUpOrDelivery()
-
-Test 1: It should add property pickUpOrDelivery with value of string "pick up"
-Code:
-customer.pickUpOrDelivery("pick up");
-customer;
-Expected Output: Customer {pickUpOrDelivery: "pick up"}
-```
-```
-Describe Customer.prototype.nameAndCallBack()
-
-Test 1: It should add property nameOnOrder and phoneNumber with string values
-Code:
-customer.nameAndCallBack("bobithy", "555 555 5555");
-customer;
-Expected Output: Customer {nameOnOrder: "bobithy", phoneNumber: "555 555 5555"}
+Expected Output: Customer { nameOnOrder: 'bobithy', phoneNumber: '555-555-5555', pickUpOrDelivery: 'pick up', address: {}}
 ```
 ```
 Describe Customer.prototype.addDeliveryAddress()
 
-Test 1: It should add address object to Customer Object and add street address, city, state, zip code into address object
+Test 1: It should add street address, city, state, zip code into address object in Customer object
 Code:
-customer.addDeliveryAddress("1119 Rich People Street", "Queens", "NY", 41233);
+let customer = new Customer();
+customer.addDeliveryAddress("1119 rich stret", "queens", "NY", 41233);
 customer;
 Expected Output: 
-Customer {address: {streetAddress: '1119 Rich People Street', city: 'Queens', state: 'NY', zipCode: 41233}}
-```
-```
-Describe Customer.prototype.addPizza()
-
-Test1: It should add a property called customerPizza to Customer object.
-Code: 
-customer.addPizza(pizza);
-customer;
-Expected Output: Customer {customerPizza: Pizza {quantity: 0, price: 0}}
+Customer { nameOnOrder: undefined, phoneNumber: undefined, pickUpOrDelivery: undefined, address: { streetAddress: '1119 rich street', city: 'queens', state: 'NY', zipCode: 41233 } }
 ```
 ```
 Describe Order()
