@@ -71,7 +71,7 @@ Code:
 let pizza = new Pizza(1, 0, ["jalapenos", "pepperoni"]);
 pizza.addPriceBasedOnTopping();
 pizza;
-Expected Output: Pizza { quantity: 1, price = 2, size: 0, topping: ["jalapenos", "pepperoni"] }
+Expected Output: Pizza { quantity: 1, price = 4, size: 0, topping: ["jalapenos", "pepperoni"] }
 
 Test3: It should not adjust price if no topping is added.
 Code: 
