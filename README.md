@@ -111,39 +111,7 @@ customer;
 Expected Output: 
 Customer { nameOnOrder: undefined, phoneNumber: undefined, pickUpOrDelivery: undefined, address: { streetAddress: '1119 rich street', city: 'queens', state: 'NY', zipCode: 41233 } }
 ```
-```
-Describe Order()
 
-Test1: It should create an Order object with totalNumberOfOrders property set to 0 and orderNumber = {}
-Code: 
-let order = new Order();
-order;
-Expected Output: Order {orderNumber: {}, totalNumberOfOrders: 0}
-```
-```
-Describe Order.prototype.addCustomer()
-
-Test1: It should add customer object into order.orderNumber property
-Code: 
-order.addCustomer(customer);
-order;
-Expected Output: Order {orderNumber: Customer {}, totalNumberOfOrders: 0 }
-
-Test2: It should assign incremented totalNumberOfOrders to each customer each time we add customer
-Code: 
-order.addCustomer(customer);
-order;
-Expected Output: Order {orderNumber: {1: Customer{}}, totalNumberOfOrders: 1 }
-```
-```
-Describe Order.prototype.assignOrderNumber()
-
-Test1: It should increment totalNumberOfOrders property by 1 and return it
-Code: 
-order.assignOrderNumber();
-order;
-Expected Output: Order {orderNumber: Customer {}, totalNumberOfOrders: 1}
-```
 ## Known bugs
 * _No known bugs_.
 
