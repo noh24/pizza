@@ -45,18 +45,17 @@ Customer.prototype.addDeliveryAddress = function(streetAddress, city, state, zip
 //UI
 window.addEventListener('load', function() {
   document.getElementById("start-button").addEventListener("click", handleClickStart);
+  let customer;
   document.getElementById("basic-info").addEventListener("submit", function(e) {
     e.preventDefault();
-    handleBasicInfoSubmission();
+    customer = handleBasicInfoSubmission();
   });
   document.getElementById("address").addEventListener("submit", function(e) {
     e.preventDefault();
-    let customer = handleBasicInfoSubmission();
-    handleAddressSubmission(customer);
+    customer = handleAddressSubmission(customer);
   });
   document.getElementById("pizza").addEventListener("submit", function(e) {
     e.preventDefault();
-    let customer = handleBasicInfoSubmission();
     handlePizzaSubmission(customer);
   });
   document.getElementById("size").addEventListener("click", highlightSelectedSize);
@@ -81,13 +80,7 @@ function handleBasicInfoSubmission() {
   } else {
     document.getElementById("hidden3").classList.remove("hidden");
   }
-  addBasicInfoToDisplay(customer);
   return customer;
-}
-
-function addBasicInfoToDisplay(customer) {
-  document.querySelector(".name").innerText = customer.nameOnOrder;
-  document.querySelector(".phone-number").innerText = customer.phoneNumber;
 }
 
 function handleAddressSubmission(customer) {
@@ -98,19 +91,10 @@ function handleAddressSubmission(customer) {
   customer.addDeliveryAddress(streetAddress, city, state, zipCode);
   document.getElementById("hidden-address").classList.add("hidden");
   document.getElementById("hidden3").classList.remove("hidden");
-  addAddressToDisplay(customer);
   return customer;
 }
 
-function addAddressToDisplay(customer) {
-  document.querySelector(".street-address").innerText = customer.address.streetAddress;
-  document.querySelector(".city").innerText = customer.address.city;
-  document.querySelector(".state").innerText = customer.address.state;
-  document.querySelector(".zip-code").innerText = customer.address.zipCode;
-}
-
 function handlePizzaSubmission(customer) {
-  document.getElementById("hidden-address").classList.add("hidden");
   const quantity = Number(document.getElementById("quantity").value);
   const size = Number(document.querySelector("input[name=pizza-size]:checked").value);
   const inputToppingArray = Array.from(document.querySelectorAll("input[name=topping]:checked"));
@@ -122,23 +106,25 @@ function handlePizzaSubmission(customer) {
   pizza.addPriceBasedOnSize();
   pizza.addPriceBasedOnTopping();
   pizza.addPriceBasedOnQuantity();
-  addPizzaDetailsToDisplay(pizza);
-  displayCheckout(customer);
+  displayCheckout(customer, pizza);
 }
 
-function addPizzaDetailsToDisplay(pizza) {
-  document.querySelector(".customer-pizza-size").innerText = pizza.size;
-  document.querySelector(".customer-pizza-topping").innerText = pizza.topping.length;
-  document.querySelector(".customer-pizza-quantity").innerText = pizza.quantity;
-  document.querySelector(".total-price").innerText = pizza.price;
-}
-
-function displayCheckout(customer) {
+function displayCheckout(customer, pizza) {
+  document.querySelector(".name").innerText = customer.nameOnOrder;
+  document.querySelector(".phone-number").innerText = customer.phoneNumber;
   document.getElementById("hidden3").setAttribute('class', "hidden");
   document.getElementById("hidden4").classList.remove("hidden");
   if (customer.pickUpOrDelivery === "delivery") {
     document.getElementById("hidden-delivery").classList.remove("hidden");
+    document.querySelector(".street-address").innerText = customer.address.streetAddress;
+    document.querySelector(".city").innerText = customer.address.city;
+    document.querySelector(".state").innerText = customer.address.state;
+    document.querySelector(".zip-code").innerText = customer.address.zipCode;
   }
+  document.querySelector(".customer-pizza-size").innerText = pizza.size;
+  document.querySelector(".customer-pizza-topping").innerText = pizza.topping.length;
+  document.querySelector(".customer-pizza-quantity").innerText = pizza.quantity;
+  document.querySelector(".total-price").innerText = pizza.price;
 }
 
 function highlightSelectedSize() {
